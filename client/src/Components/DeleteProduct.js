@@ -1,6 +1,7 @@
 import { useState } from "react";
 import React from 'react';
 import axios from "axios";
+const BaseUrl="https://ecommerce-jgon.onrender.com"
 
 
 const DeleteProduct=()=>{
@@ -11,7 +12,7 @@ const DeleteProduct=()=>{
    
     const handleDeleteClick = () => {
         
-        axios.delete(`http://localhost:3001/product/delete/${inputvalue}`)
+      axios.delete(`${BaseUrl}/product/delete/${inputvalue}`)
           .then(response => {
             if (response.data.success) {
              

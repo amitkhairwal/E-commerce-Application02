@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+const BaseUrl="https://ecommerce-jgon.onrender.com"
 
 
 const AddNewProduct = () => {
@@ -20,7 +21,7 @@ const AddNewProduct = () => {
   const addProduct = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3001/product", {
+      await axios.post(`${BaseUrl}/product`, {
         title,
         price,
        

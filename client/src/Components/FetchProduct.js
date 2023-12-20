@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Product from "./Products";
+const BaseUrl="https://ecommerce-jgon.onrender.com"
 
 const FetchProduct = () => {
   const [products, setProduct] = useState([]);
@@ -11,7 +12,7 @@ const FetchProduct = () => {
 
   const handleClick = async () => {
     try {
-        const response = await axios.get("http://localhost:3001/product");
+      const response = await axios.get(`${BaseUrl}/product`);
         setProduct(response.data);
     } catch (error) {
         console.log(error)
